@@ -1,0 +1,61 @@
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #3a3c3d;
+  }
+
+  #fbox {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #494938;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  #fbox input[type="text"], #fbox input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #db7134;
+    padding: 14px 10px;
+    outline: none;
+    width: 200px;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+
+  #fbox input[type="text"]:focus, #fbox input[type="password"]:focus {
+    width: 280px;
+    border-color: #db7134;
+  }
+
+  #btnLogIn {
+    border: 400;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #db7134;
+    padding: 14px 10px;
+    outline: none;
+    width: 200px;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+
+  #fbtnLogIn:focus {
+    width: 280px;
+    background-color: #db7134;
+  }
+

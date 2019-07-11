@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <title>JiraClone</title>
+</head>
+
+<body>
+        <div id="vlados-Div">
+                <div class="wrapper">
+                        <div id="bg-div"></div>
+
+                        <div class="topnav">
+                                <a class="active" href="#home" id="home"><i class="fas fa-home fa-2x"></i></a>
+                                <div class="dropdwn">
+                                        <button class="dropbtn">PROJECTS&nbsp;<i class="fa fa-caret-down"></i></button>
+                                        <div class="dropdown-content" id="projectsnb"></div>
+                                </div>
+                                <div class="dropdwn">
+                                        <button class="dropbtn">ASSIGNED ISSUES&nbsp;<i
+                                                        class="fa fa-caret-down"></i></button>
+                                        <div class="dropdown-content" id="issuesnb"></div>
+                                </div>
+                                <div class="dropdwn">
+                                        <button class="dropbtn">WATCHED ISSUES&nbsp;<i
+                                                        class="fa fa-caret-down"></i></button>
+                                        <div class="dropdown-content" id="issuesnb2"></div>
+                                </div>
+                                <a href="#" id="create">CREATE ISSUE</a>
+                                <div class="search-container">
+                                        <form>
+                                                <input type="text" placeholder="Search.." name="search" id="searchField"/>
+                                                <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                                        </form>
+                                </div>
+                                <div class="dropdwn ddimg">
+                                        <!-- <i class="fas fa-user-circle fa-3x"></i> -->
+                                        <img src="pictures/user-profile-image.png" id="navImg" alt="Smiley face">
+                                        <div class="dropdown-content right" id="userDropDown">
+                                                <a href="#" id="adminPage">Admin Page</a>
+                                                <a href="#" id="profilePage">View Profile</a>
+                                                <a href="#" id="logout">Log Out</a>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <form id="form">
+                                <fieldset class="task">
+                                        <legend>Create Issue</legend>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <label for="projects">Projects*</label>
+                                        <select name="projects" id="selection0"></select>
+                                        <br>
+                                        <br>
+                                        <label for="issues">Issue Type*</label>
+                                        <select name="issues" id="selection1">
+                                                <option value="Empty">Select issue type</option>
+                                                <option value="Bug">Bug</option>
+                                                <option value="New Future">New Future</option>
+                                                <option value="improvement">Improvement</option>
+                                                <option value="enhancement UI/UX">Enhancement UI/UX</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <hr />
+                                        <br>
+                                        <br>
+                                        <label for="organization">Organization*</label>
+                                        <select name="organization" id="selection2">
+                                                <option value="Empty">Select organization</option>
+                                                <option value="Development">Development</option>
+                                                <option value="QA">QA</option>
+                                                <option value="Management">Management</option>
+                                                <option value="Project Management">Project Management</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <label for="summary">Summary*</label>
+                                        <input type="text" name="summary" size="55" id="summary" maxlength="57" /><br>
+                                        <br>
+                                        <label for="priority">Priority*</label>
+                                        <select name="priority" id="selection3">
+                                                <option value="Empty">Select priority</option>
+                                                <option value="Low">Low</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="High">High</option>
+                                                <option value="Highest">Highest</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <label for="due date">Due Date*</label>
+                                        <input type="date" name="due date" id="date" /><br>
+                                        <br>
+                                        <br>
+                                        <hr />
+                                        <br>
+                                        <br>
+                                        <label for="components">Components/s*</label>
+                                        <input type="text" name="components" size="55" id="components"
+                                                maxlength="57" /><br>
+                                        <br>
+                                        <br>
+                                        <label for="affects version">Affect Version/s*</label>
+                                        <input type="text" name="affects version" size="55" id="affects_version"
+                                                maxlength="57" /><br>
+                                        <br>
+                                        <br>
+                                        <label for="fix version">Fix Version*</label>
+                                        <input type="text" name="fix version" size="55" id="fix_version"
+                                                maxlength="57" /><br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <hr />
+                                        <br>
+                                        <br>
+                                        <label for="assignee">Assignee*</label>
+                                        <select name="assignee" id="selection4"></select>
+                                        <br>
+                                        <br>
+                                        <label style="display: block; float: left;"
+                                                for="description">Description*</label>
+                                        <textarea placeholder="More detailed information about the problem" rows="4"
+                                                cols="50" id="description"></textarea>
+                                        <button type="button" id="cancel">Cancel</button>
+                                        <button type="submit" value="Submit" id="submit">Submit</button>
+                                        <button type="reset" value="Reset" id="reset">Reset</button>
+                                </fieldset>
+                        </form>
+                </div>
+        </div>
+        <div id="searchResults" class="d-none">
+                <h1>Search results:</h1>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resultsProjects" role="tab" aria-controls="home"
+                                        aria-selected="true"><b>Project</b></a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#resultsIssues" role="tab"
+                                        aria-controls="profile" aria-selected="false"><b>Issues</b></a>
+                        </li>
+                </ul>
+                <br>
+                <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="resultsProjects" role="tabpanel" aria-labelledby="home-tab"></div>
+                        <div class="tab-pane fade" id="resultsIssues" role="tabpanel" aria-labelledby="profile-tab"></div>
+                </div>
+                <br>
+                <button id="closeSearch" class="btn btn-primary">Close</button>
+        </div>
+        <div id="projectsPage" class="d-none">
+                <div id="projectInfo"></div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#all" role="tab"
+                                        aria-controls="home" aria-selected="true">All</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#open" role="tab"
+                                        aria-controls="profile" aria-selected="false">Open</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#resolved" role="tab"
+                                        aria-controls="contact" aria-selected="false">Resolved</a>
+                        </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab"></div>
+                        <div class="tab-pane fade" id="open" role="tabpanel" aria-labelledby="profile-tab"></div>
+                        <div class="tab-pane fade" id="resolved" role="tabpanel" aria-labelledby="contact-tab"></div>
+                </div>
+                <br>
+                <button id="closeProject" class="btn btn-primary">Close</button>
+        </div>
+        <div id="g-container1">
+                <div class="g-first" id="projects"></div>
+                <div class="g-second"></div>
+                <div class="g-third"></div>
+        </div>
+        <div class="g-container2">
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script src="js/navbar.js"></script>
+</body>
+
+</html>
